@@ -1,5 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+</head>
 <body>
-  <h1>Hello world</h1>
+    <h1>Welcome to Flask App</h1>
+    <form action="{{ url_for('add_user') }}" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Age:</label>
+        <input type="number" name="age" required>
+        <label>Birthplace:</label>
+        <input type="text" name="birthplace" required>
+        <input type="submit" value="Add User">
+    </form>
+    <br>
+    <a href="{{ url_for('list_users') }}">List Users</a>
 </body>
 </html>
